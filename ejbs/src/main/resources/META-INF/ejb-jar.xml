@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/ejb-jar_3_2.xsd"
+         version="3.2" metadata-complete="false">
+    <enterprise-beans>
+        <session id="UserServiceImpl">
+            <display-name>UserServiceImpl</display-name>
+            <ejb-name>UserServiceImpl</ejb-name>
+            <business-local>demo.jee7.ejb.UserService</business-local>
+            <ejb-class>demo.jee7.ejb.UserServiceImpl</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+        </session>
+    </enterprise-beans>
+</ejb-jar>
