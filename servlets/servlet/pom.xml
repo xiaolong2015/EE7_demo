@@ -15,5 +15,17 @@
          <artifactId>primary-source</artifactId>
          <scope>provided</scope>
       </dependency>
+      <dependency>
+         <groupId>javax</groupId>
+         <artifactId>javaee-api</artifactId>
+         <version>7.0</version>
+         <scope>provided</scope>
+      </dependency>
+      <dependency>
+         <groupId>root.project</groupId>
+         <artifactId>ejbs</artifactId>
+         <type>ejb</type>
+         <scope>provided</scope>
+      </dependency>
    </dependencies>
 </project>

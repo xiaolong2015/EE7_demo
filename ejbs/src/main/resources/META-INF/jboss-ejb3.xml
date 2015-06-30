@@ -1,0 +1,22 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<jboss:ejb-jar xmlns:jboss="http://www.jboss.com/xml/ns/javaee"
+               xmlns="http://java.sun.com/xml/ns/javaee"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:s="urn:security:1.1"
+               xsi:schemaLocation="http://www.jboss.com/xml/ns/javaee http://www.jboss.org/j2ee/schema/jboss-ejb3-2_0.xsd http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd"
+               impl-version="2.0" version="3.1">
+    <assembly-descriptor>
+        <s:security>
+            <ejb-name>DemoServiceBean</ejb-name>
+            <s:security-domain>demo</s:security-domain>
+        </s:security>
+        <s:security>
+            <ejb-name>RemoteServiceImpl</ejb-name>
+            <s:security-domain>demo</s:security-domain>
+        </s:security>
+        <security-role>
+            <role-name>demo</role-name>
+            <principal-name>demo</principal-name>
+        </security-role>
+    </assembly-descriptor>
+</jboss:ejb-jar>

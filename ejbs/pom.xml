@@ -25,7 +25,23 @@
          <version>7.0</version>
          <scope>provided</scope>
       </dependency>
-  </dependencies>
+      <dependency>
+         <groupId>junit</groupId>
+         <artifactId>junit</artifactId>
+         <version>4.8.1</version>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.jboss</groupId>
+         <artifactId>jboss-remote-naming</artifactId>
+         <version>2.0.1.Final</version>
+      </dependency>
+      <dependency>
+         <groupId>org.jboss.xnio</groupId>
+         <artifactId>xnio-nio</artifactId>
+         <version>3.2.2.Final</version>
+      </dependency>
+   </dependencies>
    <build>
       <plugins>
          <plugin>

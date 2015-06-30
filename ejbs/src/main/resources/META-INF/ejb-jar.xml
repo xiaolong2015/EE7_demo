@@ -12,5 +12,13 @@
             <session-type>Stateless</session-type>
             <transaction-type>Container</transaction-type>
         </session>
+        <session id="RemoteServiceImpl">
+            <display-name>RemoteServiceImpl</display-name>
+            <ejb-name>RemoteServiceImpl</ejb-name>
+            <business-remote>demo.jee7.ejb.RemoteService</business-remote>
+            <ejb-class>demo.jee7.ejb.RemoteServiceImpl</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+        </session>
     </enterprise-beans>
 </ejb-jar>
