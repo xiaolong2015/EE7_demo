@@ -1,0 +1,4 @@
+<jboss xmlns="urn:jboss:1.0">
+    <!-- deactivate weld and work with legacy descriptors -->
+    <weld xmlns="urn:jboss:weld:1.0" require-bean-descriptor="true"/>
+</jboss>
