@@ -9,6 +9,7 @@ import javax.ejb.Stateless;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.HeaderParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -31,15 +32,16 @@ public class RestApplicationImpl implements RestApplication {
     private demo.jee7.ejb.UserService userService;
 
     @RolesAllowed("demo")
-    public String greeting(String name) {
-        Principal principal = servletRequest.getUserPrincipal();
-        String authorization = servletRequest.getHeader("Authorization");
-        Enumeration<String> header = servletRequest.getHeaderNames();
-        List<String> stringHeader = new ArrayList<String>();
-        while (header.hasMoreElements()) {
-            stringHeader.add(header.nextElement());
+    public String greeting(String name, String auth) {
+        String userpass = auth.substring(5); // remove string "Basic "
+        byte[] buf = org.apache.commons.codec.binary.Base64.decodeBase64(userpass.getBytes());
+        String credential = new String(buf);
+        String user = null, password = null;
+        int p = credential.indexOf(":");
+        if (p > -1) {
+            user = credential.substring(0, p);
+            password = credential.substring(p+1);
         }
-        User alice = userService.getUser("alice");
-        return (principal == null ? "null principal" : "Principal: " + principal.getName()) + "," + stringHeader + ", " + authorization + ", " + alice.getUsername();
+        return "user: " + user + ", password:" + password;
     }
 }

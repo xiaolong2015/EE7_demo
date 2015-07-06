@@ -31,6 +31,19 @@
       </dependency>
    </dependencies>
    <build>
+      <resources>
+         <resource>
+            <directory>src/main/resources</directory>
+         </resource>
+         <resource>
+            <directory>src/main/filtered</directory>
+            <filtering>true</filtering>
+         </resource>
+         <resource>
+            <directory>src/main/application</directory>
+            <filtering>true</filtering>
+         </resource>
+      </resources>
       <plugins>
          <plugin>
             <artifactId>maven-ear-plugin</artifactId>
